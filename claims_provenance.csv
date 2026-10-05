@@ -1,0 +1,116 @@
+id,位置,声明,论文值,复核值,数据文件,列/过滤口径,聚合方式,n,状态,备注
+C01,§1 摘要/贡献/§4.4,F1d 多起点找到的改善 N≤512,13%–24%,.126/.171/.240/.228,aggregated/v7_v2_exp_V2_F1d_real_jacobian/f1d_real_jacobian.csv,nu=.005 且 N∈{64;128;256;512};1−ratio_r,范围,4 格,已核,改善=1−r
+C02,§1 摘要/贡献/§4.3/§4.4,F1d 改善比 r=κ*_diag/κ(R),[.76;.87],[.7596;.8741],aggregated/v7_v2_exp_V2_F1d_real_jacobian/f1d_real_jacobian.csv,nu=.005 且 N∈{64;128;256;512};ratio_r,范围,4 格,已核,P-01 已改口径
+C03,§1 摘要/§4.4,F1d N=1024 时 κ(K_r)≳1e13,1.95e13,1.95e13,aggregated/v7_v2_exp_V2_F1d_real_jacobian/f1d_real_jacobian.csv,N=1024 行 kappa_R,原值,1,已核,近双精度极限未纳入定量结论
+C04,§1 摘要/§5,uniform 可精修盆地命中率,.613 (49/80),.6125,aggregated/v7_v1_exp_G1b_pentry/g1b_pentry_agg.csv,scope=pooled;family=uniform;p_entry(=good_k/n),比例+Wilson95,80,已核,
+C05,§5,加权族命中率 rational/down_inv/down_lin,.463/.475/.388,.4625/.475/.3875,aggregated/v7_v1_exp_G1b_pentry/g1b_pentry_agg.csv,scope=pooled;family 各行 p_entry,比例,80/族,已核,
+C06,§5,McNemar 净救回 down_inv/down_lin/rational,−11/−18/−12,−11/−18/−12,aggregated/v7_v1_exp_G1b_pentry/g1b_flip.csv,net 列,配对计数,80,已核,
+C07,§5,McNemar 精确双侧 p down_lin/down_inv/rational,.002/.043/.065,.0021/.0433/.0652,aggregated/v7_v1_exp_G1b_pentry/g1b_flip.csv,由 (rescued_BtoG;lost_GtoB) 精确二项重算,双侧精确,80,已核,
+C08,§5,Holm 校正后仅 down_lin 显著 p,.006,.0063,由 C07 三族 p 值 Holm 重算,最小 p×3,Holm,3 比较,已核,
+C09,§5 表注,小粘性 ν=.001 配对差,+.25–.35,+.35/+.35/+.25,aggregated/v7_v1_exp_G1b_pentry/g1b_pentry_agg.csv,scope=by_nu;nu=.001;uniform−各族 p_entry,配对差,20/族,已核,
+C10,§5 表注,过渡粘性 ν=.01 方向不一致,不一致,0/+.20/−.05,aggregated/v7_v1_exp_G1b_pentry/g1b_pentry_agg.csv,scope=by_nu;nu=.01;uniform−各族 p_entry,配对差,20/族,已核,
+C11,§6,G2 proxy(g_et) AUC,.971,0.97078,aggregated/v7_v1_exp_G2_diagnose/g2_feature_auc.csv,feature=ge_t;auc,原值,—,已核,含标签—特征同源相关声明
+C12,§6,G2 oracle AUC,.64,0.6386,aggregated/v7_v1_exp_G2_diagnose/g2_samples.csv,oracle 特征重算(早前会话已核),重算,—,已核,
+C13,§6,G2 灵敏度/特异度,.33/1.00,早前已从 g2_samples.csv 复核,aggregated/v7_v1_exp_G2_diagnose/g2_samples.csv,阈值口径重算(早前会话已核),重算,—,已核,
+C14,§5,E1b 全量 runs 数,1584,1584,aggregated/v7_v1_exp_E1b_smooth/e1b_runs.csv,数据行数,计数,1584,已核,
+C15,§1 贡献,宽度64基准组中位 β=1→8,.0043→.018,.004309→.018296,aggregated/v7_v1_exp_R1_arch/r1_runs.csv,axis=width;level=64;nu=.005;family=rational;β=1.0 vs 8.0;L2 列,组中位,5/组,已核,过滤口径必须含 axis=width
+C16,§4.4,跨粘性表(P1) 9 行数字,见正文表,全对,aggregated/exp_V2_P1_constrained/p1_constrained.csv,ν∈{.005;.01;.05}×N∈{128;256;512},原值,9,已核,种子 .005→0/.01→40/.05→10
+C17,§4.2 注记,Adam 瞬态每步相对漂移/n=500 累计 δ_P,≈0.93/≈464,0.928/463.8,aggregated/v7_v2_exp_V2_lem41_drift_verify/lem41_drift_nu0.005.csv,deltaP_start_n500;均值与 均值/500,均值,3,已核,ν=.005 好盆地
+C18,§4.2 注记,Adam 稳态(step≥1000)累计漂移中位 n=50/100/500,0.64/2.13/35.3,0.6403/2.1258/35.3032,aggregated/v7_v2_exp_V2_lem41_drift_verify/lem41_drift_nu0.005.csv,deltaP_mid_n50/100/500,中位,3,已核,
+C19,§4.2 注记,稳态每步平均漂移,1.3e-2/2.1e-2/7.1e-2,1.28e-2/2.13e-2/7.06e-2,（派生自 C18）,中位/n 导出,导出,3,已核,
+C20,§4.2 注记,平台项/白化梯度比值 中位与 IQR,19.6;[5.6;46.6],19.602;[5.643;46.553],aggregated/v7_v2_exp_V2_s3_platform_ratio/s3_ratios.csv,ratio 列(汇总见 raw 下 s3_summary.json),中位+IQR,150=3×50,已核,稳态窗 step 500–990
+C21,§4.3,N=2 闭式例 κ(R) 与 t*(a;b),75.494;2.9223(25.75;75.25),75.4943;2.92233,解析重算(无 CSV),U=旋转30°;K=U diag(1;100) U^T,重算,—,已核,
+C22,§4.3 附录,t=1/a 对照 κ 与 (tr)²/det,≈1495;1497.1,1495.12;1497.12,解析重算(无 CSV),2×2 恒等式 κ+κ⁻¹+2=(tr)²/det,重算,—,已核,
+C23,§4.3,P8 等相关阵 42 组 r=1 最大偏离,3.5e-11,3.48e-11,aggregated/exp_V2_P8_synthetic_equicorr/p8_synthetic_equicorr.csv,r_ratio 列;max|r−1|,极值,42=6N×7ρ,已核,
+C24,§4.3,P8 起点数配置 N≤32/64/128,20/12/8,一致,aggregated/exp_V2_P8_synthetic_equicorr/p8_synthetic_equicorr.csv,nstart 列按 N 分档,逐档,42,已核,
+C25,§4.3,P8 带状阵 r(30 起点;PSD),.800/.791,.79930/.79136,aggregated/exp_V2_P8_synthetic_equicorr/p8_banded_corr.csv,r_ratio 列两行,原值,2,已核,与 F1d [.76;.87] 吻合
+C26,§4.4 表4.1,F1d 三元组表 ν=.005 全部 24 数,见正文表,全对,aggregated/exp_V2_P1_constrained/p1_constrained.csv,nu=.005 四行(N=64–512);kappa_uniform/kappa_jacobi/kappa_unconstr/r_unconstr/kappa_rational_best/rational_best_beta,原值,4,已核,N=64 行亦在该文件
+C27,§4.4,uniform/Jacobi 倍数 N=64–128 与 N=256–512,35–37 倍/2.8–3.2 倍,34.84/37.39；3.19/2.77,aggregated/exp_V2_P1_constrained/p1_constrained.csv,nu=.005;uniform_vs_jacobi 列,原值,4,已核,
+C28,§4.4,线性 gap 口径下 Jacobi 填补比例,>.85,1.004–1.129,（派生自 C26）,1−(κ*diag−κ(R))/(κ(K_r)−κ(R)),导出,4,已核,κ*diag<κ(R) 故比值>1
+C29,§4.4,rational 族内最优：N=64 β*=5 为 Jacobi 32 倍；N≥128 β*=1 且单调恶化,β*=5；32 倍；β*=1,5.0；32.04；1.0,aggregated/exp_V2_P1_constrained/p1_constrained.csv,rational_best_beta/r_rational/kappa_beta_1..100 列,原值+逐列,4,已核,N≥128 时 kappa_beta 列随 β 单调增
+C30,§4.4,有效秩 PR 饱和（N≥256）,~109,109.10/109.41/109.40/109.40,aggregated/v7_v2_exp_V2_F1d_real_jacobian/f1d_real_jacobian.csv,nu=.005 且 N∈{256;512;1024;2048};eff_rank_PR,原值,4,已核,
+C31,§4.4,mpmath 高精度验证 λmin 相对差异,0.153%<1%,seed0=0.153%；其余 7 种子 5.2e-7–3.3e-5（均<1%）,aggregated/v7_v2_exp_V2_F1d_N1024_verify/f1d_N1024_verify.csv 与 f1d_N1024_verify_lmin_allseeds.csv,lmin_rel_diff 列,原值+2026-10-04 补跑,8 种子,已核,N=1024 全部 8 个好盆地种子已验证（原 VERIFY_SEEDS 的 10/20 为伪解盆地不可用于好盆地验证）；8 种子 κ(R) 区间 7.6e12–1.95e13
+C32,§4.4/§1,Gstab 减权族恶化比值：默认裁剪/小粘性/裁剪关/ν=.01 down_inv,1.7–4.9/3.0–4.9/0.6–3.4/0.57,1.726–4.878/2.993–4.878/0.565–3.390/0.565,aggregated/v7_v1_exp_Gstab_grad/gstab_agg.csv,stage=E;kappa_med 族÷uniform；clip=1 全 ν；clip=1 ν∈{.001;.005}；clip=0 全 ν；clip=0 ν=.01,比值范围,11 种子,已核,
+C33,§4.4 图题,Gstab g_peak 与 λmax 排序 rational≫uniform>down_lin>down_inv,排序一致,6/6 格成立（两指标）,aggregated/v7_v1_exp_Gstab_grad/gstab_agg.csv,stage=E;g_peak 与 lmax_med 逐 (ν;clip) 格排序,排序核验,6 格,已核,图题已改为谱右端 λmax 排序口径（v1.20 已闭环 P-17）
+C34,§4.4,C2 训练全程 κ 比中位且全程>1,1.83–2.39；>1,1.830–2.390；逐 stage 中位全>1,aggregated/v7_v1_exp_C2_converged_sa/c2_runs.csv,beta>1（5/15/40 合并）；按 stage 对 improve_ratio 取中位,中位,48/stage,已核,图题与图内标签已改"β∈{5;15;40} 合并"（P-16 已落盘 2026-10-04；图已重生成）
+C35,§4.4,E3 收敛点增权族恶化/down_lin 改善/Gate 有理,2.35–4.64/.81/.88,2.351–4.638/0.806/0.883,aggregated/v7_v1_exp_E3_family_sa/e3_spectral.csv,point=conv 或 gate；按 family 对 improve_ratio 取中位（contrast 合并）,中位,18/族·点,已核,3 种子×2 点×2 N×3 contrast
+C36,§4.4,F1d 多起点总数随 N 递减,13→7,13/9/7,code exp_V2_F1d_real_jacobian.py 行 152,nstart=12/8/6 加 1 个 x=0 起点（opt_diag_kappa）,配置核对,—,已核,正文已区分主扫描 13→7 与跨粘性 11→7（v1.20 已闭环 P-21）
+C37,§4.4 补充观察,谱端三族 λmax 与 κ 与负曲率维数,6.61e3/7.06e2/7.67e1；51.8/54.2/57.7；n_neg=2,6613.21/706.49/76.70；51.82/54.25/57.74；n_neg=2,raw/v7_v2/exp_V2_lanczos_convergence/lanczos_gate_probe.csv,2026-10-04 定点重跑（diag_lanczos_convergence.py 同口径；ncv=(61;24) 与 (100;60)；双起点）；λmax 比 9.36:1:1/9.21；|λmin| 缩放 9.80 倍与 1/9.80,重跑,9 次估计,已核,原输出未留存已补数据入仓库；ncv 与起点逐位一致 可复现性✓；gate seed=0 L2=7.908e-3
+C38,§1/§4.4,N=1024 时 κ 近双精度极限（共 4 处）,κ(K_r)≳1e13,κ(R)=1.95e13；κ(K_r) 未记录,aggregated/v7_v2_exp_V2_F1d_largeN_fix/f1d_largeN_fix.csv,kR_eigh（N=1024 行）,原值,1,已核,正文已统一为 κ(R)≳1e13 并附 mpmath 高精度验证（v1.20 已闭环 P-15）
+C39,§4.4,F1d 冻结点好盆地 L2,.0079,0.007908,aggregated/exp_V2_P1_constrained/p1_constrained.csv,gate_l2（nu=.005 行）,原值,4 行同值,已核,
+C40,§5.3 rem:align-emp / §5.5 G3 段,G3 坏盆地 cos α_S（对 d_B，β=1）,"中位 +.0885;18/18 正;范围 [+.007,+.461]","med .088527;18/18;[.0068,.4606]",aggregated/v7_v1_exp_G3_c3prime/g3_probe.csv,beta==1 且 truth_good==0;cos_S,中位+计数+范围,18,已核,
+C41,§5.3 rem:align-emp / §5.5 G3 段,G3 好盆地 cos α_S（对 d_*，β=1）,"中位 +.0047;24/26 正;范围 [-.0045,+.594]","med .004740;24/26;[-.0045,.5943]",aggregated/v7_v1_exp_G3_c3prime/g3_probe.csv,beta==1 且 truth_good==1;cos_S,中位+计数+范围,26,已核,P-25 已改 -.004→-.0045
+C42,§5.3 rem:align-emp（P-25 新增句）/ fig:r1g3 图题,"C3 内积 ⟨∂_β g_S, g_S⟩ 逐条符号",176/176 全正（含坏盆地 72 条）,176/176 全正,aggregated/v7_v1_exp_G3_c3prime/g3_probe.csv,c3_inner（全表 176 行）,计数,176,已核,Gram 双路径自检 max 1.99e-7（gram_check_err 列）
+C43,fig:r1g3 图题,C3 内积中位随 β 变化（好盆地）,1.4e4→5.1e5 单调增大,13649.8/38924.4/127385.5/506504.2,aggregated/v7_v1_exp_G3_c3prime/g3_agg.csv,truth_good==1;c3_inner_med 按 beta,原值,4 档,已核,P-25 图题已改（原写减小 与数据矛盾）
+C44,fig:r1g3 图题,定号条件达成率（好盆地 cos>ε_S 占比）,.19→.81,.1923/.3462/.5769/.8077,aggregated/v7_v1_exp_G3_c3prime/g3_agg.csv,truth_good==1;sign_hold_rate 按 beta,原值,4 档,已核,P-25 图题已改（原写全程为 1 与数据矛盾）
+C45,§5.4 G1c 段/§5.5,G1c 关闭裁剪后零爆炸（含 ν=.001 rational）,blown=0（8 格全 0）,blown_k 全 0,aggregated/v7_v2_exp_V2_G1c_clip_factor/g1c_clip_agg.csv,clip==0;blown_k,原值,8 格(2ν×4族),已核,n=20/格
+C46,§5.4 G1c 段/§5.5,ν=.005 裁剪开关对进入率无影响,四族 McNemar p=1.00;差异 ±.05 内,p=1.000×4;Δ=.05/0/0/.05,g1c_clip_runs.csv + v7_v1_exp_G1b_pentry/g1b_pentry_runs.csv,ν=.005;按 seed 配对 clip0 vs clip1(=G1b);good 列,配对 McNemar 精确,20,已核,clip=1 数据复用 G1b（同协议）
+C47,§5.4 G1c 段/§5.5,ν=.001 clip=1 时 uniform 优于两减权族,p=.016/.039;clip=0 时族间不显著,.0156/.0391;clip=0 p=.219/1/1,v7_v1_exp_G1b_pentry/g1b_pentry_runs.csv + g1c_clip_runs.csv,ν=.001;族间按 seed 配对;good 列,配对 McNemar 精确,20,已核,复现 G1b 方向
+C48,§5.4 G1c 段,Gstab-B 裁剪触发率,99.0–99.8%;中位 99.5%,"[.990,.998] med .995",aggregated/v7_v2_exp_V2_GstabB_stabilizer/gstabB_lr_runs.csv,family==uniform 且 nu==.005 且 lr==1e-3;frac_clip,范围+中位,8,已核,正文已删（P-27）留档
+C49,§5.4 B1b 段/§5.5,B1b 爆炸率,lr≤.05 全不炸;lr=.1 rational 50%/减权 12.5%/uniform 0%,0 起爆（lr≤.05）;.5/.125/.125/0,aggregated/v7_v2_exp_V2_GstabB_stabilizer/gstabB_lr_runs.csv,blown 按 family×lr 聚合,比例,8 种子×4 族,已核,seeds 0/5/25/30/35/40/45/50（10/15/20 无好盆地排除）
+C50,§5.4 B1b 段/§5.5,B1b 有效 lr 上限中位（L2<.06）,uniform .001/down_inv .0015/down_lin .002/rational .001,.001/.0015/.002/.001,aggregated/v7_v2_exp_V2_GstabB_stabilizer/gstabB_lr_runs.csv,"blown==0;每(seed,family)取 L2<.06 的最大 lr",中位,8,已核,
+C51,§5.4 B1b 段/§5.5,B1b 上限配对 Wilcoxon,down_lin 精确 .0625/渐近≈.043（5 非零）;down_inv .180;rational .109,精确 .0625/.5/.25;渐近(脚本口径) .043/.180/.109,aggregated/v7_v2_exp_V2_GstabB_stabilizer/gstabB_lr_runs.csv,同 C50 的上限值配对,精确枚举+脚本渐近（无连续性修正）,8（非零 5/2/3）,已核,P-26 已落盘：§5.5 已补正态渐近近似口径句
+C52,§5.4 B1b 段,宽松阈值上限中位（L2<.1/.2）,down_lin .0035/.005;他族 .001–.002,.0035/.005;uniform .0015/.002;down_inv .002/.002;rational .001/.002,aggregated/v7_v2_exp_V2_GstabB_stabilizer/gstabB_lr_runs.csv,同 C50 改阈值,中位,8,已核,
+C53,§5.4 B2b 段/§5.5,B2b ν=.005 四族终态 L2,中位 .0235–.0255;配对 p=.069–.161（down_inv 边缘 .069）,.0235/.0251/.0253/.0255;p=.069/.093/.161,aggregated/v7_v2_exp_V2_GstabB_stabilizer/gstabB_lbfgs_runs.csv,nu==.005;L2 按 seed 配对,中位+脚本渐近 Wilcoxon,8,已核,P-26 已落盘：§5.5 已补渐近口径句
+C54,§5.4 B2b 段/§5.5,B2b ν=.001 四族终态 L2,中位 .0113–.0146;p=.345–.686,.0113/.0115/.0118/.0146;p=.345/.686/.686,aggregated/v7_v2_exp_V2_GstabB_stabilizer/gstabB_lbfgs_runs.csv,nu==.001;L2 按 seed 配对,中位+脚本渐近 Wilcoxon,5,已核,seeds 0/5/10/40/50;零爆炸 ✓
+C55,§5.4 GC 段,GC 500 步梯度范数排序与量级,rational(30–63)≫uniform(3–6)>down_lin(.2–.8)>down_inv(.1–.4),"逐步中位:[27.28,63.27]/[3.17,6.08]/[.16,.78]/[.11,.38]",aggregated/v7_v2_exp_V2_GstabB_stabilizer/gstabB_grad_curve.csv,"按(family,step)取 8 种子中位;g_pre",逐步中位范围,8×11 步,已核,P-26 已落盘：正文 rational 30–63 已改 27–63
+C56,§5.4 G1c 段,G1c rational 裁剪前峰值 7e2（ν=.001）,7×10^2,"Gstab Stage-E 中位 721.26（n=11,max 1774）",aggregated/v7_v1_exp_Gstab_grad/gstab_agg.csv,stage==E 且 nu==.001 且 clip==0 且 family==rational;g_peak,原值（中位）,11,已核,P-26 已落盘：G1c 段已写明数值借自 Gstab Stage-E 中位 721
+C57,§5.5 R1/G3 段,Vverify 的 η_gate 对 β Spearman 全为 +1,4ν×12β 全 +1,+1.0000（全格）,aggregated/v7_v1_exp_Vverify/vv_claim1_from_e1.csv,按 nu×beta 取 spearman 列,Spearman 秩相关,48,已核,
+C58,§5.5 R1/G3 段,R1 跨 7 个配置方向不变,7 配置 rational 全 +1,+1.0（全配置）,aggregated/v7_v1_exp_R1_arch/r1_invariance.csv,width/depth/npde 共 7 配置;eta_beta_spearman,Spearman 秩相关,7,已核,down_inv=-1 为预期反向；uniform 无 β 变化为 NaN
+C59,§5.5 R1/G3 段,C-Sep 直接测量：中位比与严格版,中位比 38–45；严格版 .72–8.88,中位比 45.40/44.15/38.06；严格版 8.88/2.30/.72,aggregated/exp_V2_P1_constrained/p1_constrained.csv,nu=.005;N=128/256/512;csep_median/csep_strict,原值,3,已核,N=512 严格版不成立但中位比仍 38 ✓
+C60,§5.5 N6,down_lin Holm 显著区间,.001–.029,.001–.032,aggregated/v7_v1_exp_G1b_pentry/g1b_pentry_runs.csv + code/v7_1d/experiments/V2/exp_V2_N1_N6_stats.py,tau∈[.05,.08];phase0_L2<tau；配对 McNemar+Holm,精确 McNemar+标准 Holm（累计 max）,80,已核,脚本漏累计 max 导致 .032/.029 倒置；结论不变；P-28 已落盘（p=.001–.032）
+C61,§5.5 N6,低阈值好盆地样本数,<15/80,最少 18/80,aggregated/v7_v1_exp_G1b_pentry/g1b_pentry_runs.csv,tau=.03/.04；按 family 统计 phase0_L2<tau,计数,80/族,已核,最低为 tau=.03 down_lin 18/80；P-28 已落盘（<15/80 改 18/80）
+C62,§5.5 fig:e1heat/附录 E1,逐种子最优 β* 各 ν 中位,1/10/20/10,1/5/20/10,aggregated/v7_v1_exp_E1_beta_nu/e1_runs.csv,nu=.001/.003/.005/.01；每 (nu,seed) 取 L2 最小的 beta,逐种子 argmin 后中位,44,已核,ν=.003 的 beta 网格仅 {1;5;10;15;30;60}；P-29 已落盘（1/5/20/10）
+C63,§5.5 E1/R2,跨粘度 β* 中位,3–15（E1+R2 综合口径）,E1=1/5/20/10；R2=8/1/3,aggregated/v7_v1_exp_E1_beta_nu/e1_runs.csv + aggregated/v7_v1_exp_R2_budget/r2_runs.csv,E1 同 C62；R2 每 (nu,seed) 取 L2 最小的 beta,逐种子 argmin 后中位,E1 44；R2 33,已核,任何合理综合口径均得不到 3–15；P-29 已落盘（删综合口径改分列）
+C64,§5.5 E1,g_post 分布与括注,中位 .08；IQR [0;.59]；范围 [0;.97]；括注称 β=1 失败者记 0,原始不归零口径 .078/[0;.589]/[0;.966]；归零口径中位约 .043,aggregated/v7_v1_exp_E1_beta_nu/e1_runs.csv,薄激波 4ν×11；g_post=(L2(beta=1)-min_beta L2)/L2(beta=1),中位/IQR/范围,44,已核,论文数字用原始不归零口径；P-29 已落盘（括注已删）
+C65,§5.5 E1b,刚性端 4–10 倍增益,4–10 倍,MLP l2_band=10.41/3.93；总 L2=4.43/1.40,aggregated/v7_v1_exp_E1b_smooth/e1b_runs.csv + e1b_summary.csv,feat=MLP;nu=.01/.03；逐 seed 取 l2_band 或 L2 最小；gain=x(beta=1)/best-1,中位,22（2ν×11）,已核,4–10 仅在 MLP+l2_band 口径成立；总 L2 口径不成立；P-30 已落盘
+C66,§5.5 E1b,光滑端退化,光滑端退化,ν≥.3 frac_S≥.899；MLP/Match L2≈1e-6；C-Sep 标 N/A,aggregated/v7_v1_exp_E1b_smooth/e1b_csep.csv + e1b_runs.csv,nu=.3/.5/1；frac_S；L2,范围+中位,csep 33/粘度；runs 66/feat/粘度,已核,应写误差地板与 S/O 语义失效；不写总 L2 相对增益=0；P-30 已落盘
+C67,§5.5 E1b,固定高带宽在光滑端失配,固定高带宽失配,best-L2 Hi/MLP=1942/677/22 倍；Hi/Match=5134/359/39 倍,aggregated/v7_v1_exp_E1b_smooth/e1b_runs.csv,nu=.3/.5/1；每 (feat,nu,seed) 取 L2 最小后按 feat 中位再取比,逐 seed best 中位+比值,11/格,已核,强支持；P-30 已落盘
+C68,§5.5 fig:e1heat,中位热力图代表性,中位数能说明问题？,格中位最优 β=1/30/20/1；逐种子 β* 中位=1/5/20/10；逐种子 Spearman 中位≈0,aggregated/v7_v1_exp_E1_beta_nu/e1_runs.csv,每 nu：格内中位 argmin vs 逐种子 argmin；逐 seed L2-beta Spearman,对比,44,已核,中位数仅中心趋势；双峰与宽 IQR 使格中位最优不代表逐种子多数；P-31 方案 A 已落盘（双面板图）
+C69,§5.5 fig:e1heat,E1 各格离散度,图中未显示,IQR/median 常>1；ν=.001 β=1 IQR .003–.574；多格 max≈.57,aggregated/v7_v1_exp_E1_beta_nu/e1_runs.csv + e1_agg.csv,按 nu×beta 统计 L2 q1/q3/min/max/success,IQR 与成功率,11/格,已核,P-31 方案 A 已落盘：双面板图+图题口径句；左图排除 ν=.001 β≥5 失败格
+C70,§6.2 (iii),四点玩具探针 AUC,单坐标 .542；纯线性 .566；+z1z2 1.000,.5419/.5659/1.000,aggregated/v7_v1_exp_G2_diagnose/g2_toy_check.csv,toy_fourpoint(n=400) 合成探针,AUC,400,已核,脚本 exp_G2_basin_diagnose.py；P-35 正文内联出处已删由此承接
+C71,§6.3,G2 标签规模,oracle 好 49/坏 31、存在率 .613；proxy 好 14/坏 66,oracle_good=49/80；truth_good=14/80,raw/v7_v1/exp_G2_diagnose/g2_samples.csv,oracle_good/truth_good 列,计数,80,已核,
+C72,§6.3,49/80 与 G1b 命中率同一统计量,标签 80/80 一致；L2 差 ≤5e-7,80/80；最大差 4.69e-7,g2_samples.csv + aggregated/v7_v1_exp_G1b_pentry/g1b_pentry_runs.csv,family==uniform；按 (nu;seed) 合并 oracle_L2 vs phase0_L2,逐配置对比,80,已核,互为复现一致性校验非独立证据
+C73,§6.3 (i),7 个训练过程量 AUC,中位 .51；区间 .50–.59,中位 .511；[.502;.588],aggregated/v7_v1_exp_G2_diagnose/g2_feature_auc.csv,proxy/loss_cv/loss_slope/gradnorm_t/wmean_t/focus_t/focus_cv 七行 auc,中位+范围,80,已核,
+C74,§6.3 (ii),r_resid 两口径 AUC,proxy .84；oracle 存在性 .51,.8442；.5115,g2_feature_auc.csv + raw g2_samples.csv,r_resid 对 truth_good/oracle_good,AUC,80,已核,2048 固定网格无加权 RMS 与脚本 L109/L116 一致；验收/存在性分裂成立
+C75,§6.3 (iii),结构量 proxy AUC,峰值比 .95；带内质量 .90；绝对峰值 .89；g_et .971,.9524/.8983/.8902/.9708,g2_feature_auc.csv,peak_ratio/peak_in_band/abs_peak/ge_t 四行 auc,AUC,80,已核,
+C76,§6.3 (iii),结构量 oracle 存在性口径,.63–.70（P-36 已改）,ge_t .639；peak_ratio .633；abs_peak .649；peak_in_band .700,raw g2_samples.csv,四特征对 oracle_good 重算,AUC,80,已核,原 .63–.65 漏 peak_in_band=.7005；P-36 落盘
+C77,§6.3,g_et LOO 指标与 17 维持平,.925/.857(12/14)/.939(62/66)/.898/MCC .76；17 维 .898/.76,g2_feature_auc ge_t 行全对；MCC 复算 .7567；g2_group_loo ALL 行 sens/spec 相同,g2_feature_auc.csv + g2_group_loo.csv,ge_t 行 loo 列；ALL_全多变量 行,LOO Youden；混淆矩阵,80,已核,
+C78,§6.3,g_et proxy AUC bootstrap 区间,[.93;1.00],独立重跑分层 bootstrap B=5000：[.93;.998],raw g2_samples.csv,ge_t 对 truth_good 分层重抽样,百分位 2.5/97.5,80,已核,小正类下区间不稳定声明保留
+C79,§6.3,g_et oracle 口径,AUC .64；灵敏度 .33；特异度 1.00,.6386；LOO 16/49=.327；31/31=1.000,raw g2_samples.csv,ge_t 对 oracle_good；LOO Youden,AUC+LOO 混淆,80,已核,g2_feature_auc_oracle.csv 的 .931 为"真解选起点"上界备查口径（脚本 L12/L23；附录已声明主文不使用）
+C80,§6.3,端到端粗略账本,.613×.857≈.53；.175×.857≈.15,.5253；.1500（14/80=.175）,g2_samples.csv,oracle_good 比例×proxy 灵敏度,算术,80,已核,两口径标签机制不同的警告保留
+C81,§6.3+附录方向安全声明,好坏盆地 L2 自然间隙与 E-new-3,[.049;.063] 间隙 .013；τ∈[.05;.06] 100%；τ∈[.03;.08] ≥90%；附录 τ=.05,间隙 [.0493;.0628]；扫描 100/100/97.5/95/96.25/90 全对,g2_samples.csv + aggregated/v7_v1_exp_Enew3_tau_scan/tau_scan.csv,truth_L2 按 truth_good 分组；tau 扫描 agree_pct,范围+一致率,80,已核,附录 τ_band=0.5 旧口径已改（P-33）；图谱扫描范围改脚本实际 [.01;.20]
+C82,§6.3 fig:g2auc 图题,STRUCT 组内其余量区间,.50–.71,.500–.714（logkappa .714;lam_min .683;starts_cv .628;gate_frac .508;n_neg .500）,g2_feature_auc.csv,STRUCT 组除三名外五行 auc,范围,80,已核,
+C83,§5.5 G1b+§6.3,K=4 多起点构造（P-38）,4 连续子种子 s..s+3 独立重训非重启；按 5 等距不重叠；跨族共享子种子,exp_G1b_pentry.py L98-100 与 exp_G2_basin_diagnose.py L73-75 代码实证（seed=base_seed+k;set_seed;base_cfg）,code/v7_1d/experiments/v1/exp_G1b_pentry.py + exp_G2_basin_diagnose.py,seed=base_seed+k 循环,代码审查,4/配置,已核,正文说明句已补（P-38）
+C84,§6.3,正类规模说明（P-37 删括注）,真正的好盆地正类仅 14/80,truth_good=14/80,raw g2_samples.csv,truth_good 列,计数,80,已核,旧括注"proxy 判好 40/真好 14/精度 35%/FDR 65%"不可溯源已删（proxy top-40 仅 6/14；7 副本全一致；V1.14 评审曾质疑）
+C85,§7.1 S2a 设置,训练总次数,合计 462 次（7 权重—对比度组合×6 配置×11 种子）,poisson_runs.csv 462 行,aggregated/v7_v2_exp_V2_S2a_poisson_degenerate/poisson_runs.csv,全表行数,计数,462,已核,
+C86,§7.1 (i),增权六组配对五组不显著；显著组（单频 σ=1）中位 1.41e-5→1.11e-4 p=.001 变差倍数中位约 5,同上,poisson_agg.csv + poisson_runs.csv,增权 β=10 vs 等权 按配置分组,Wilcoxon 配对+中位,11/组,已核,
+C87,§7.1 (ii),多频+普通MLP 逆减权 7.42e-3→2.02e-4 p=.001 11/11 改善 倍数中位约 24,同上,同上,多频×MLP 组逆减权 vs 等权,Wilcoxon 配对+中位,11,已核,
+C88,§7.1 (ii),单频 σ=1 逆减权 1.41e-5→4.05e-6 p=.005 9/11 改善 倍数约 3.3,同上,同上,单频×σ=1 组,Wilcoxon 配对+中位,11,已核,误差地板括注（P-39 同类口径）
+C89,§7.1 (ii),失配高带宽（多频 σ=15）逆减权 .108→.113 p=.001 显著变差,同上,同上,多频×σ=15 组,Wilcoxon 配对+中位,11,已核,
+C90,§7.1 (iii),失配高带宽比匹配带宽差 40–1000 倍,同上,同上,σ=15 vs σ=1 跨组中位比,范围,11/组,已核,
+C91,§7.2 S2d,三厚度 K=4 选优 11/11 进可精修盆地 精修后中位 1e-5 量级,同上,aggregated/v7_v2_exp_V2_S2d_internal_layer/s2d_runs.csv,按 ε 分组终态 L2,中位+计数,11/档,已核,
+C92,§7.2 S2d 机制A条件性,分区梯度能量比 η 在 7/11 Gate 点下降 4/11 上升 平均 Spearman 约 -0.32,同上,aggregated/v7_v2_exp_V2_S2d_beta_effect/s2d_beta_probe.csv,Gate 冻结探针 β∈{1;3;8},逐点符号+秩相关,11 Gate 点,已核,
+C93,§7.2 S2d 配对精修,β=3 对 β=1 为 8/11 更好 中位差 -1.06e-5 p=.41 Holm .56；β=8 为 7/11 p=.28 Holm .56,同上,aggregated/v7_v2_exp_V2_S2d_beta_effect/s2d_beta_refine_cmp.csv,层区 L2 配对差,Wilcoxon+Holm,11,已核,（层区 L2）括注已补（P-40）
+C94,§7.2 S2e,无种子 12/12 塌零 L2≈.999 残差可降至近零,同上,aggregated/v7_v2_exp_V2_S2e_spike/s2e_runs.csv,无种子组终态,计数+中位,12,已核,残差定性化改写（P-41）
+C95,§7.2 S2e,监督对照全域归一化 L2 中位 6.2e-4 较塌零低约三个数量级,同上,aggregated/v7_v2_exp_V2_S2e_supervised/s2e_supervised.csv,12 独立种子拟合 u*,中位,12,已核,
+C96,§7.2 S2e,拓扑种子：精确 sech 4/4；粗高斯三幅值均 4/4；错位 x0=.15（约 34ε）4/4 失败,同上,s2e_runs.csv,按种子类型分组,计数,4/组,已核,
+C97,§7.2 S2c,同厚度 Burgers K=8 的 8 起点 3 命中；贴边层 σ=15/30 共 16/16 零命中 L2=9.6–10.8,同上,aggregated/v7_v2_exp_V2_S2c_aligned_twostage/s2c_runs.csv,对照组与无干预组终态 L2,计数+范围,8/16,已核,
+C98,§7.2 S2c,拉伸厚层 4/4 成功 薄层 8/8 失败；精确指数提升 4/4（全域 1.6e-3–3.3e-3）粗 logistic 8/8 失败,同上,s2c_runs.csv + diag_S2c_lift/stretch 输出,按干预分组,计数+范围,4/8,已核,
+C99,§7.3 tab:d1beta,有理族四档（τ=.06）：β=1 中位 1.66e-2 [2.87e-3;.327] 好 8；β=3 1.53e-2 [6.56e-3;.150] 好 9；β=8 5.56e-2 [1.80e-2;.375] 好 6；β=15 5.35e-2 [2.90e-2;.105] 好 8,同上,aggregated/v8_time_varying_d1r/d1r_runs.csv,β 档×时空全域相对 L2,中位+范围+计数,11/档,已核,P-45 重跑代（exp_D1_rational_beta_scan.py 共 44 runs 含机制A探针）
+C100,§7.3 (ii),配对 Wilcoxon β=1 对 3/8/15：p=.41/.32/.37 均不显著,同上,d1r_runs.csv,同种子配对,Wilcoxon 双侧,11,已核,
+C101,§7.3 (ii),逐种子最优 β=3 拿 6/11 β=1 拿 4/11 β=15 拿 1/11；seed 30 由 .327 降至 .029；β=8/β=1 比值中位 3.95 最差 97 倍,同上,d1r_runs.csv,逐种子最小值归属+配对比值,计数+中位+最大,11,已核,
+C102,§7.3 (iii),机制A：cos 中位 .9999 [.999;1.000]；总范数比 7.75 [7.15;7.84]；行范数比 2.90→4.20,同上,aggregated/v8_time_varying_d1r/d1r_mechanism_a.csv,Gate 冻结 β=1→8 探针,中位+范围,22 探针对,已核,
+C103,§7.3 表注,阈值敏感性：τ=.05/.06/.10 下 β=8 为 4/6/8、β=15 为 5/8/10；τ=.06 取在自然间隙（四档排序值 .056–.066 有间隙）,同上,d1r_runs.csv,τ 三档计数+排序间隙,计数,11/档,已核,表注阈值窗重写（P-42）
+C104,§7.3 (ii),空间线性族对照：β=8/15 零好盆地（增权有害）；旧版 D1 曾得增权有益,β=8/15 好盆地数 0/11（summary.csv 等四代一致）,aggregated/v8_time_varying/summary.csv 与 summary_1/_2/_3.csv,β 档×L2_relative,计数,11/档,已核,S9 扫描；_7/_8/_9/_10 为字节级重复代 见目录 README
+C105,§7.3 caseB,对照 2.5655、down_3 2.7495、down_8 2.8609、up_3 2.4433、up_8 2.4436、clip .01/.1 与对照逐位相同（论文写 2.75/2.86/2.44/2.57）,同上,aggregated/v8_time_varying/summary_11–_18.csv（canonical 代 seeds 200–210）,逐组终态 L2,中位,11/组,已核,早期 seeds 0–10 代（_19–_24）数值略异仅留档
+C106,§7.4 tab:c45,三档中位 .0506/.0503/.0485 范围 [.0461;.0628]/[.0418;.0582]/[.0414;.0583],复核一致（.05059/.05033/.04847）,aggregated/v8_burgers_2d/summary_2.json,β 档×L2_total,中位+范围,11/档,已核,
+C107,§7.4 结论,全部 33 run 进好盆地（表列 11/11/11）；β=1→8 约 4% 同量级波动,τ=.06 口径下 β=1 为 9/11（seed 3=.0608、seed 4=.0628 贴阈）；33 run 最大 L2=.0628,summary_2.json,L2_total 与 τ=.06 比较,计数,33,已核,P-47 方案 b 已落盘：好盆地数列改最大 L2 列（.0628/.0582/.0583） 表注声明不设阈值 正文/小结/第八章总结同步改"无失败种子"
+C108,§8.3,F1d 线性 gap 口径 Jacobi 填补 >85%；rational 族内最优恒 β=1,复用 C28/C29 复核值,aggregated/exp_V2_P1_constrained/p1_constrained.csv,同 C26–C29,导出,4,已核,P-50：原"六族均无法达到"已收窄为 rational 族
+C109,§8.4 (4),uniform .613 最高；down_lin .388 Holm p=.006；down_inv/rational 亦低于 uniform,复用 C04/C05/C08 复核值,aggregated/v7_v1_exp_G1b_pentry/g1b_pentry_agg.csv,同 C04–C08,原值,80,已核,
+C110,§8.4 (4),B2b 固定步长 L-BFGS 四族终态差异不显著,复用 C53/C54 复核值（p=.069–.686）,aggregated/v7_v2_exp_V2_GstabB_stabilizer,同 C53/C54,配对 Wilcoxon,8 配对,已核,down_inv 边缘 .069 仍为不显著
+C111,§8.1/§8.2/§8.5/总结段,无新定量声明（条件清单与结论汇总）,各引用数字均回指 C01–C107 已核行,——,——,——,——,已核,P-48/P-49 措辞修正已落盘
+C112,附录 B N/p 表,D1 机制A探针 N=2048 p=7851；配点为随机（非固定）,脚本 N_probe=2048、torch.rand 每探针重抽、同批比较两 β,code/v8_2d/experiments/time_varying/exp_D1_rational_beta_scan.py L161-182,代码审查,代码审查,22 探针对,已核,P-52 表行已改"随机配点"
+C113,附录 B.5,bc_amp 审计：δ(ν)=1-tanh(1/2ν) 四档数值；S1 作废 264 runs,4.1e-9/9.1e-5/.238/.538 复算全对；invalid_bcamp 264 行,aggregated/v7_v2_exp_V2_S1_sigma_nu_scan/sigmanu_fixed_runs_invalid_bcamp.csv,数值复算+行数,复算+计数,4/264,已核,
+C114,附录 实验图谱,Gstab/R1/G3/G1c/S1 样本量,R1 7 配置 n=5/格（330 行）；G1c 160=8 格×20；S1 990 行；Gstab 88/ν,r1_runs.csv 330、g1c_clip_runs.csv 160、sigmanu_fixed_runs.csv 990、gstab_early_runs.csv 264（88/ν）,各聚合 csv 行数与分组,计数,——,已核,P-53 两单元格已改
+C115,附录 app:tables,R2 297、E1b 1584、G1b/G2 各 80 的格数算术,3×3×3×11=297；3×8×6×11=1584；4×20=80,设计网格,算术,——,已核,

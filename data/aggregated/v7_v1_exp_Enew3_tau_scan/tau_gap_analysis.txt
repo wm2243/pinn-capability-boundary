@@ -1,0 +1,11 @@
+G2 label robustness analysis (E-new-3)
+====================================
+Sample size: n=80 (14 good basins, 66 pseudo-solutions)
+
+Good-basin truth_L2 range:        [0.0079, 0.0493]
+Pseudo-solution truth_L2 range:   [0.0628, 0.5897]
+Natural gap: [0.0493, 0.0628] (width = 0.0134)
+
+Conclusion: there is a natural gap between good and bad basins; any threshold
+            tau in [0.0493, 0.0628] yields exactly the same labels (100%
+            agreement). The original label threshold tau = .05 lies inside the gap.

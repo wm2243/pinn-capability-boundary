@@ -1,0 +1,4 @@
+﻿family,n,uniG_xG,uniG_xB,uniB_xG,uniB_xB,rescued_BtoG,lost_GtoB,net
+down_inv,80,31,18,7,24,7,18,-11
+down_lin,80,24,25,7,24,7,25,-18
+rational,80,25,24,12,19,12,24,-12

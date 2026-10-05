@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+title: "What Spatial Weighting Can and Cannot Change in PINNs: Spectral Capability Bounds of Local Diagonal Weights with Controlled Falsification"
+authors:
+  - family-names: "Wen"
+    given-names: "Ning"
+    orcid: "https://orcid.org/0009-0005-5395-7791"
+    email: "wenning-compmath@outlook.com"
+version: "1.20"
+date-released: 2026-10-05
+repository-code: "https://github.com/wm2243/pinn-capability-boundary"
+doi: "[Zenodo-DOI待填]"
+license: "MIT AND CC-BY-4.0"
+type: software
+keywords:
+  - physics-informed neural networks
+  - loss weighting
+  - condition number
+  - van der Sluis bound
+  - basin of attraction
+  - viscous Burgers equation

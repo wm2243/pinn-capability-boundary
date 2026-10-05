@@ -1,0 +1,9 @@
+metric,value
+acc,0.925
+delta_G,0.075
+balanced_acc,0.898268
+delta_G_bal,0.101732
+precision,0.75
+F1,0.8
+MCC,0.756644
+L2_gap,0.01341

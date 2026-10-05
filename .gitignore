@@ -1,0 +1,49 @@
+# Runtime artifacts (official data lives in data/; run outputs are not committed)
+results/
+**/results/
+code/**/_gate_cache/
+*.log
+
+# Content not published on GitHub (included in the Zenodo full archive)
+# Third-party reference PDFs (not redistributed for copyright reasons)
+references/
+# Raw run records (144MB, see the Zenodo full archive)
+data/raw/*
+!data/raw/v7_v1/
+data/raw/v7_v1/*
+# Exception: keep the Phase0 basin cache (reproducible from a fresh clone)
+!data/raw/v7_v1/_gate_cache/
+
+# LaTeX build artifacts
+*.aux
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Superseded paper versions (repo keeps only the V1.20 final; old versions remain on disk)
+paper/paper1_v1_18*
+paper/paper1_v1_19*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.ipynb_checkpoints/
+
+# Archived / process drafts (the paper lives in paper/; archived scripts are not committed)
+_archived_scripts/
+code/v7_1d/theory/
+# Internal development notes (stale design drafts and personal workflow docs; kept on disk only)
+code/v7_1d/experiments/v1/README_V8_experiments.md
+code/v7_1d/experiments/V2/README_V2实验设计_S1S2.md
+code/v7_1d/experiments/V2/EXPERIMENT_PLAYBOOK.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+.spyproject/
