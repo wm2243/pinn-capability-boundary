@@ -9,7 +9,7 @@ authors:
 version: "1.20"
 date-released: 2026-10-05
 repository-code: "https://github.com/wm2243/pinn-capability-boundary"
-doi: "[Zenodo-DOI待填]"
+doi: "10.5281/zenodo.23168250"
 license: "MIT AND CC-BY-4.0"
 type: software
 keywords:

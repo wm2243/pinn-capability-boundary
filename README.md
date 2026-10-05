@@ -11,7 +11,7 @@ Spectral capability bounds of local diagonal weights + controlled empirical fals
 ## Links
 
 - GitHub (this repository): https://github.com/wm2243/pinn-capability-boundary
-- Zenodo full archive (including 144MB raw run data): DOI `[TBD]`
+- Zenodo full archive (including 144MB raw run data): DOI `10.5281/zenodo.23168250`
 - HAL preprint: `[TBD]`
 
 ## Main claims
@@ -94,6 +94,6 @@ python tools/verify_claims.py    # 22 checks: CSV structure, provenance-table sy
             Spectral Capability Bounds of Local Diagonal Weights with Controlled Falsification},
   author = {Wen, Ning},
   year   = {2026},
-  howpublished = {HAL preprint [ID TBD]; code and data: Zenodo DOI [TBD]}
+  howpublished = {HAL preprint [ID TBD]; code and data: Zenodo DOI 10.5281/zenodo.23168250}
 }
 ```
